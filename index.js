@@ -20,3 +20,36 @@ function save() {
     // NB: Make sure to not delete the existing content of the paragraph
     console.log(count)
 }
+
+
+let timerEl = document.getElementById("timer")
+let timerInterval
+let seconds = 0
+
+function formatTime(s) {
+    let mins = Math.floor(s / 60)
+    let secs = s % 60
+    return (
+        (mins < 10 ? "0" : "") + mins + ":" + (secs < 10 ? "0" : "") + secs
+    )
+}
+
+function startTimer() {
+    if (!timerInterval) {
+        timerInterval = setInterval(function () {
+            seconds++
+            timerEl.textContent = formatTime(seconds)
+        }, 1000)
+    }
+}
+
+function stopTimer() {
+    clearInterval(timerInterval)
+    timerInterval = null
+}
+
+function resetTimer() {
+    stopTimer()
+    seconds = 0
+    timerEl.textContent = "00:00"
+}
