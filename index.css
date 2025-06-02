@@ -6,6 +6,13 @@ body {
   height: 100vh;
 }
 
+button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
 .container {
   background: white;
   max-width: 80%;
@@ -48,3 +55,14 @@ button {
   font-weight: bold;
 }
 
+#startTimer-btn {
+  background: black;
+}
+
+#stopTimer-btn {
+  background: black;
+}
+
+#resetTimer-btn {
+  background: black;
+}
